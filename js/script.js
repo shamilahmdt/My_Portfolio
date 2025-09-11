@@ -1,6 +1,6 @@
 
   let rippleIntervalActive = true; // Control flag
-const y = Math.random() * document.body.scrollHeight;
+  const y = Math.random() * document.body.scrollHeight;
   function createRipple(x, y, fixed = false) {
     const ripple = document.createElement("div");
 
@@ -20,16 +20,18 @@ const y = Math.random() * document.body.scrollHeight;
     ripple.style.left = `${x - baseSize / 2}px`;
     ripple.style.top = `${y - baseSize / 2}px`;
 
-    const blueShades = [
-      "rgba(0, 123, 255, 0.5)",
-      "rgba(0, 174, 255, 0.5)",
-      "rgba(0, 102, 204, 0.5)"
-    ];
-    ripple.style.borderColor = blueShades[Math.floor(Math.random() * blueShades.length)];
+      const blueShades = [
+        "rgba(0, 123, 255, 0.5)",
+        "rgba(0, 174, 255, 0.5)",
+        "rgba(0, 102, 204, 0.5)"
+      ];
+      ripple.style.borderColor = blueShades[Math.floor(Math.random() * blueShades.length)];
 
-    document.getElementById("ripple-container").appendChild(ripple);
-    ripple.addEventListener("animationend", () => ripple.remove());
+    // document.getElementById("ripple-container").appendChild(ripple);
+    // ripple.addEventListener("animationend", () => ripple.remove());
   }
+
+  
 
   // Generate random positions (responsive)
   function getRandomRipplePositions(count) {
